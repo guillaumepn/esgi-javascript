@@ -13,8 +13,8 @@ services:
 # <------ asset <------
 
 # ------> node ------>
-    node_14ivqwubqjlxx9pw9:
-        container_name: node_14ivqwubqjlxx9pw9
+    node:
+        container_name: node
         image: node:10.5-alpine
         user: "node"
         working_dir: /node
