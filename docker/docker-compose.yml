@@ -1,0 +1,27 @@
+version: "2"
+
+services:
+
+# ------> asset ------>
+    asset_14ivqwubqjlxx9pw8:
+        container_name: asset_14ivqwubqjlxx9pw8
+        image: node:alpine
+        working_dir: /var/www/assets
+        volumes:
+            - ../assets:/var/www/assets
+            - ../public:/var/www/public
+# <------ asset <------
+
+# ------> node ------>
+    node_14ivqwubqjlxx9pw9:
+        container_name: node_14ivqwubqjlxx9pw9
+        image: node:10.5-alpine
+        user: "node"
+        working_dir: /node
+        volumes:
+            - .././:/node
+        environment:
+            NODE_ENV: dev
+        expose:
+            - 8081
+# <------ node <------
