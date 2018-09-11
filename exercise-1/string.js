@@ -30,7 +30,7 @@ function prop_access(object, string) {
   props.map(prop => {
     res = res[prop]
   })
-  return res
+  return res || string
 }
 
 function leet(string) {
@@ -53,8 +53,6 @@ function yoda(string) {
 }
 
 function vig(word, key) {
-  // wikipedia
-  // crypto
   let alphabet = 'abcdefghijklmnopqrstuvwxyz'
   let hashed = ''
   word.split('').map((letter, i) => {
@@ -63,10 +61,9 @@ function vig(word, key) {
     let keyLetterIndex = alphabet.indexOf(key[index])
     let hashedLetterIndex = wordLetterIndex + keyLetterIndex
     hashedLetterIndex = hashedLetterIndex >= 26 ? hashedLetterIndex - 26 : hashedLetterIndex
-    let l = alphabet[hashedLetterIndex]
-    hashed += l
+    hashed += alphabet[hashedLetterIndex]
   })
   return hashed
 }
 
-console.log(vig('wikipedia', 'crypto'))
+console.log(prop_access(object, 'animal.type.name'))
