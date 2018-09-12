@@ -40,6 +40,7 @@ function leet(string) {
     .replace('i', '1')
     .replace('o', '0')
     .replace('u', '(_)')
+    .replace('y', '7')
 }
 
 function verlan(string) {
